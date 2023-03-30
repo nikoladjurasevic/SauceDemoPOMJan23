@@ -19,7 +19,7 @@ public class SortingTests extends BaseTest{
             InventoryPage inventoryPage = new InventoryPage(driver);
             inventoryPage.sortItemsByText(Strings.SORT_BY_PRICE_ASC);
 
-
+            //ovde dodajte deo gde proveravate da li si itemi sortirani
 
         }finally {
             driver.quit();
