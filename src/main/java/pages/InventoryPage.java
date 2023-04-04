@@ -14,6 +14,10 @@ public class InventoryPage extends BasePage {
     @FindBy (xpath = "//*[@data-test = 'add-to-cart-sauce-labs-bike-light']")
     WebElement addToCartBikeLight;
 
+    @FindBy (xpath = "//*[@data-test = 'add-to-cart-sauce-labs-onesie']")
+    WebElement addToCartOnesie;
+
+
     @FindBy (xpath = "//span[@class = 'shopping_cart_badge']")
     WebElement shoppingCartBadge;
 
@@ -27,8 +31,16 @@ public class InventoryPage extends BasePage {
     //methods
     public void clickAddToCartBikeLight() {
         print("clickAddToCartBikeLight");
+        waitForElement(addToCartBikeLight);
         addToCartBikeLight.click();
     }
+
+    public void clickAddToCartOnesie() {
+        print("clickAddToCartOnesie");
+        scrollIntoView(addToCartOnesie);
+        addToCartOnesie.click();
+    }
+
 
     public String getNumberFromShoppingCartIcon() {
         print("getNumberFromShoppingCartIcon");
@@ -39,6 +51,10 @@ public class InventoryPage extends BasePage {
         print("sortItemsByText ( " + sortType + " )");
         Select dropdown = new Select(dropDownButton);
         dropdown.selectByVisibleText(sortType);
+    }
+
+    public boolean isDropDownPresent() {
+        return isElementPresent(dropDownButton);
     }
 
 }

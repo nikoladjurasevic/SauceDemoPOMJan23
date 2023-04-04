@@ -40,4 +40,12 @@ public class BaseTest {
         System.out.println(s);
     }
 
+
+    public void sleep(int seconds) {
+        try {
+            Thread.sleep(seconds*1000);
+        }catch (Exception e) {
+            print(e.getMessage());
+        }
+    }
 }
